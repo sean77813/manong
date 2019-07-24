@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manong.mapper.WzckYwKcMapper">
+    <resultMap id="BaseResultMap" type="com.manong.pojo.WzckYwKc">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="KC_DWDM" jdbcType="VARCHAR" property="kcDwdm"/>
+        <result column="KC_DWMC" jdbcType="VARCHAR" property="kcDwmc"/>
+        <result column="KC_WZDM" jdbcType="VARCHAR" property="kcWzdm"/>
+        <result column="KC_WZMC" jdbcType="VARCHAR" property="kcWzmc"/>
+        <result column="KC_WZYTDM" jdbcType="VARCHAR" property="kcWzytdm"/>
+        <result column="KC_WZYTMC" jdbcType="VARCHAR" property="kcWzytmc"/>
+        <result column="KC_WZSL" jdbcType="INTEGER" property="kcWzsl"/>
+        <result column="KC_WZLHDM" jdbcType="VARCHAR" property="kcWzlhdm"/>
+        <result column="KC_WZLHMC" jdbcType="VARCHAR" property="kcWzlhmc"/>
+        <result column="KC_BZ" jdbcType="VARCHAR" property="kcBz"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, KC_DWDM, KC_DWMC, KC_WZDM, KC_WZMC, KC_WZYTDM, KC_WZYTMC, KC_WZSL, KC_WZLHDM, 
+    KC_WZLHMC, KC_BZ
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WZCK_YW_KC
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from WZCK_YW_KC
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.manong.pojo.WzckYwKc">
+    insert into WZCK_YW_KC (ID, KC_DWDM, KC_DWMC, 
+      KC_WZDM, KC_WZMC, KC_WZYTDM, 
+      KC_WZYTMC, KC_WZSL, KC_WZLHDM, 
+      KC_WZLHMC, KC_BZ)
+    values (#{id,jdbcType=VARCHAR}, #{kcDwdm,jdbcType=VARCHAR}, #{kcDwmc,jdbcType=VARCHAR}, 
+      #{kcWzdm,jdbcType=VARCHAR}, #{kcWzmc,jdbcType=VARCHAR}, #{kcWzytdm,jdbcType=VARCHAR}, 
+      #{kcWzytmc,jdbcType=VARCHAR}, #{kcWzsl,jdbcType=INTEGER}, #{kcWzlhdm,jdbcType=VARCHAR}, 
+      #{kcWzlhmc,jdbcType=VARCHAR}, #{kcBz,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.manong.pojo.WzckYwKc">
+        insert into WZCK_YW_KC
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="kcDwdm != null">
+                KC_DWDM,
+            </if>
+            <if test="kcDwmc != null">
+                KC_DWMC,
+            </if>
+            <if test="kcWzdm != null">
+                KC_WZDM,
+            </if>
+            <if test="kcWzmc != null">
+                KC_WZMC,
+            </if>
+            <if test="kcWzytdm != null">
+                KC_WZYTDM,
+            </if>
+            <if test="kcWzytmc != null">
+                KC_WZYTMC,
+            </if>
+            <if test="kcWzsl != null">
+                KC_WZSL,
+            </if>
+            <if test="kcWzlhdm != null">
+                KC_WZLHDM,
+            </if>
+            <if test="kcWzlhmc != null">
+                KC_WZLHMC,
+            </if>
+            <if test="kcBz != null">
+                KC_BZ,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="kcDwdm != null">
+                #{kcDwdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcDwmc != null">
+                #{kcDwmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzdm != null">
+                #{kcWzdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzmc != null">
+                #{kcWzmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzytdm != null">
+                #{kcWzytdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzytmc != null">
+                #{kcWzytmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzsl != null">
+                #{kcWzsl,jdbcType=INTEGER},
+            </if>
+            <if test="kcWzlhdm != null">
+                #{kcWzlhdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzlhmc != null">
+                #{kcWzlhmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcBz != null">
+                #{kcBz,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.manong.pojo.WzckYwKc">
+        update WZCK_YW_KC
+        <set>
+            <if test="kcDwdm != null">
+                KC_DWDM = #{kcDwdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcDwmc != null">
+                KC_DWMC = #{kcDwmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzdm != null">
+                KC_WZDM = #{kcWzdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzmc != null">
+                KC_WZMC = #{kcWzmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzytdm != null">
+                KC_WZYTDM = #{kcWzytdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzytmc != null">
+                KC_WZYTMC = #{kcWzytmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzsl != null">
+                KC_WZSL = #{kcWzsl,jdbcType=INTEGER},
+            </if>
+            <if test="kcWzlhdm != null">
+                KC_WZLHDM = #{kcWzlhdm,jdbcType=VARCHAR},
+            </if>
+            <if test="kcWzlhmc != null">
+                KC_WZLHMC = #{kcWzlhmc,jdbcType=VARCHAR},
+            </if>
+            <if test="kcBz != null">
+                KC_BZ = #{kcBz,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.manong.pojo.WzckYwKc">
+    update WZCK_YW_KC
+    set KC_DWDM = #{kcDwdm,jdbcType=VARCHAR},
+      KC_DWMC = #{kcDwmc,jdbcType=VARCHAR},
+      KC_WZDM = #{kcWzdm,jdbcType=VARCHAR},
+      KC_WZMC = #{kcWzmc,jdbcType=VARCHAR},
+      KC_WZYTDM = #{kcWzytdm,jdbcType=VARCHAR},
+      KC_WZYTMC = #{kcWzytmc,jdbcType=VARCHAR},
+      KC_WZSL = #{kcWzsl,jdbcType=INTEGER},
+      KC_WZLHDM = #{kcWzlhdm,jdbcType=VARCHAR},
+      KC_WZLHMC = #{kcWzlhmc,jdbcType=VARCHAR},
+      KC_BZ = #{kcBz,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <select id="selectByWzdm" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select * from WZCK_YW_KC
+  	where KC_WZDM = #{wzdm,jdbcType=VARCHAR}
+  </select>
+
+    <select id="existsByWzdm" resultType="java.lang.Integer" parameterType="java.lang.String">
+  	select case when 
+  		exists(select 1 from WZCK_YW_KC c where c.KC_WZDM = #{wzdm,jdbcType=VARCHAR} ) 
+  	then 1 else 0 end from dual
+  </select>
+
+    <select id="selectkcListByZc" resultMap="BaseResultMap">
+        select * from WZCK_YW_KC
+        where 1 = 1
+        <if test="kcDwdm!=null and kcDwdm !=''">-->
+            AND KC_DWDM = #{kcDwdm,jdbcType=VARCHAR}
+        </if>
+        <if test="kcWzytdm!=null and kcWzytdm !=''">-->
+            AND KC_WZYTDM = #{kcWzytdm,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>
