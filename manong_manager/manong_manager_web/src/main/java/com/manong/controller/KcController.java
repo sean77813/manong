@@ -14,9 +14,4 @@ public class KcController {
     @Autowired
     private KcService kcService;
 
-    @RequestMapping("/kc/{id}")
-    @ResponseBody
-    public WzckYwKc getKc(@PathVariable String id){
-       return kcService.getKc(id);
-    }
 }

@@ -29,6 +29,11 @@
         <druid.version>1.1.19</druid.version>
         <oracle.version>10.2.0.4</oracle.version>
         <jackson.vsersion>2.7.3</jackson.vsersion>
+        <fastdfs.version>1.27-SNAPSHOT</fastdfs.version>
+        <commons-fileupload>1.3.1</commons-fileupload>
+        <commons-io>2.2</commons-io>
+        <commons-lang3>3.1</commons-lang3>
+        <freemarker.version>2.3.28</freemarker.version>
     </properties>
 
     <dependencyManagement>
@@ -118,8 +123,46 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.vsersion}</version>
             </dependency>
+            <!-- -->
 
-        </dependencies>
+            <dependency>
+                <groupId>org.csource</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>${fastdfs.version}</version>
+            </dependency>
+
+            <!-- 通用-->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+     </dependencies>
     </dependencyManagement>
 
     <build>
@@ -147,6 +190,7 @@
                 <includes>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>**/*.conf</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
